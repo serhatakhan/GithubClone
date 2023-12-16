@@ -1,0 +1,298 @@
+@import "variables";
+@import "reset";
+
+.header{
+    width: 100%;
+    height: 105px;
+    font-family: $font;
+    border-bottom: 1px solid $icon-border;
+    padding: 16px;
+    background-color: $header-bg;
+
+    &-top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-left{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .fa-bars{
+                font-size: 17px;
+                color: $header-left-icon;
+                border: 1px solid $icon-border;
+                padding: 7px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: border .2s;
+
+                &:hover{
+                    border: 1px solid $header-left-icon;
+                }
+            }
+            .fa-github{
+                font-size: 32px;
+                color: $logo-bg;
+                cursor: pointer;
+            }
+            p{
+                font-size: 14px;
+                font-weight: 600;
+                color: $header-font-bg;
+                cursor: pointer;
+                transition: .2s;
+                &:hover{
+                    background-color: $main-bg;
+                }
+           
+            }
+        }
+
+        &-right{
+            display: flex;
+            align-items: center;
+            gap: 11px;
+
+            &-input{
+                
+                display: flex;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                .fa-magnifying-glass {
+                    /* Sol taraftaki arama ikonu */
+                    left: 10px; /* İkonun sol kenarı ile arama kutusunun sol kenarı arasındaki mesafe */
+                    color: $header-right-icon;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+
+                .fa-chevron-right {
+                    /* Sağ taraftaki ok ikonu */
+                    right: 10px; /* İkonun sağ kenarı ile arama kutusunun sağ kenarı arasındaki mesafe */
+                    color: $header-right-icon;
+                    border-left: 1px solid $header-right-icon;
+                    padding-left: 4px;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+
+                input {
+                    /* Arama kutusu için stillendirmeler */
+                    padding-left: 20px; /* Sol taraftaki ikonun genişliği kadar bir boşluk bırak */
+                    padding-right: 20px; /* Sağ taraftaki ikonun genişliği kadar bir boşluk bırak */
+                    border-radius: 5px;
+                    border: 1px solid $icon-border;
+                    padding: 5px 8px 5px 30px;
+                    width: 350px;
+                    height: 33px;
+                    background-color: transparent;
+                    color: $header-font-bg;
+
+                    &::placeholder{
+                        color: $placeholder;
+                    }
+                }
+            }
+
+            &-line{
+                width: .4px;
+                height: 22px;
+                display: block;
+                background-color: $icon-border;
+            }
+
+            &-plus{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 9px;
+                border: 1px solid $icon-border;
+                padding: 7.7px 8px;
+                border-radius: 5px;
+                transition: .2s;
+                cursor: pointer;
+
+                &:hover{
+                    border: 1px solid $header-left-icon;
+                    background-color: rgb(21, 27, 37);
+                }
+
+                i{
+                    color: $header-right-icon;
+                    font-size: 13px;
+                }
+
+            }
+
+            &-circle{
+                .fa-circle-dot{
+                    padding: 7.7px 8px;
+                    border: 1px solid $icon-border;
+                    color: $header-right-icon;
+                    border-radius: 5px;
+                    font-size: 13px;
+                    cursor: pointer;
+                    transition: .2s;
+
+                    &:hover{
+                        border: 1px solid $header-left-icon;
+                        background-color: rgb(21, 27, 37);
+                    }
+                }
+            }
+
+            &-request{
+                .fa-code-pull-request{
+                    padding: 7.7px 8px;
+                    border: 1px solid $icon-border;
+                    color: $header-right-icon;
+                    border-radius: 5px;
+                    font-size: 13px;
+                    cursor: pointer;
+                    transition: .2s;
+
+                    &:hover{
+                        border: 1px solid $header-left-icon;
+                        background-color: rgb(21, 27, 37);
+                    }
+                }
+            }
+
+            &-tissue{
+                .fa-box-tissue{
+                    padding: 7.7px 8px;
+                    border: 1px solid $icon-border;
+                    color: $header-right-icon;
+                    border-radius: 5px;
+                    font-size: 13px;
+                    cursor: pointer;
+                    transition: .2s;
+
+                    &:hover{
+                        border: 1px solid $header-left-icon;
+                        background-color: rgb(21, 27, 37);
+                    }
+                }
+            }
+
+            &-img{
+                img{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+               
+            }
+        }
+    }
+
+    &-bottom{
+        width: 100%;
+        height: 48px;
+        margin-top: 5px;
+        padding-left: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 23px;
+
+        i{
+            color: $header-right-icon;
+            font-size: 15px;
+        }
+
+        p{
+            color: $header-font-bg;
+            font-size: 13px;
+        }
+
+        .overview{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            position: relative;
+            transition: .2s;
+            &:hover{
+                background-color: $main-bg;
+            }
+            &::after{
+                content: "";
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin-bottom: -14px;
+                border-radius: 20px;
+                background-color: #f78166;
+            }
+            p{
+                font-weight: bold;
+            }
+        }
+
+        .repo{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: .2s;
+            &:hover{
+                background-color: $main-bg;
+            }
+
+            .repo-number{
+                background-color: #2d3139;
+                padding: 3px 7px;
+                border-radius: 20px;
+                color: $header-font-bg;
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+
+        .project{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: .2s;
+            &:hover{
+                background-color: $main-bg;
+            }
+        }
+
+        .pack{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: .2s;
+            &:hover{
+                background-color: $main-bg;
+            }
+        }
+
+        .stars{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: .2s;
+            &:hover{
+                background-color: $main-bg;
+            }
+        }
+    }
+}
